@@ -1,0 +1,214 @@
+:root {
+    --primary: #4caf50;
+    --bg-dark: #0f0f1a;
+    --bg-card: #1a1a2e;
+    --text: #e0e0e0;
+    --radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+body {
+    margin: 0;
+    background: var(--bg-dark);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+}
+
+.portfolio-nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: var(--bg-card);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+.nav-link::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+}
+
+.hero-greeting {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.hero-name {
+    font-size: 3.5rem;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.hero-role {
+    color: var(--primary);
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.hero-desc {
+    animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+.hero-actions {
+    animation: fadeInUp 0.8s ease-out 1s both;
+}
+
+.btn-hero-primary {
+    background: var(--primary);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-hero-secondary {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 12px 24px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.skills-section,
+.projects-section,
+.contact-section {
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.skills-section {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.section-title {
+    color: var(--primary);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 20px;
+    transition: var(--transition);
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+.project-image {
+    width: 100%;
+    display: block;
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 15, 26, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-btn {
+    background: var(--primary);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.contact-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.contact-link {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-link:hover {
+    transform: translateY(-3px);
+}
+
+.portfolio-footer {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+}
